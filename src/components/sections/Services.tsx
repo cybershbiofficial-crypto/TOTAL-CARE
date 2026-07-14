@@ -1,5 +1,4 @@
 import { RevealText, RevealBlock } from "@/components/site/Reveal";
-import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import {
   Shield,
   PaintRoller,
@@ -12,7 +11,6 @@ import {
   Tv,
   Snowflake,
   Building,
-  CheckCircle2,
   PhoneCall,
 } from "lucide-react";
 import imgWaterproofing from "@/assets/client/plumbing-under-sink.jpeg";
@@ -226,107 +224,47 @@ export function Services() {
 
 function ServiceCard({ service, index }: { service: (typeof services)[number]; index: number }) {
   const Icon = service.icon;
+  const whatsappNumber = "971563937512";
+  const whatsappMessage = encodeURIComponent(
+    `Hi TOTAL CARE, I'm interested in your ${service.title} services. Could you provide more details?`,
+  );
+  const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
 
   return (
-    <Sheet>
-      <SheetTrigger asChild>
-        <RevealBlock delay={index * 50}>
-          <button className="group text-left relative flex h-[400px] w-full flex-col justify-end overflow-hidden rounded-[2rem] bg-graphite transition-all duration-1000 hover:-translate-y-2 hover:shadow-[0_25px_50px_-12px_rgba(212,175,55,0.25)] cursor-pointer will-change-transform border border-line/10 ease-[cubic-bezier(0.25,1,0.5,1)]">
-            {/* Background Image with Overlay */}
-            <div className="absolute inset-0 z-0 overflow-hidden">
-              <img
-                src={service.image}
-                alt={service.title}
-                loading="lazy"
-                className="w-full h-full object-cover opacity-30 group-hover:opacity-50 group-hover:scale-110 transition-all duration-1000 ease-[cubic-bezier(0.25,1,0.5,1)] will-change-transform"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-transparent" />
-            </div>
-
-            <div className="relative z-10 p-8 md:p-10">
-              <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-full bg-background/50 backdrop-blur-md text-accent ring-1 ring-white/10 transition-all duration-700 ease-[cubic-bezier(0.25,1,0.5,1)] group-hover:scale-110 group-hover:bg-accent group-hover:text-background shadow-lg">
-                <Icon className="h-5 w-5" />
-              </div>
-              <h3 className="text-2xl md:text-3xl font-extrabold text-foreground mb-4 font-display tracking-tight leading-tight group-hover:text-accent transition-colors duration-700 drop-shadow-md">
-                {service.title}
-              </h3>
-              <p className="text-[15px] leading-loose text-ivory/80 group-hover:text-ivory transition-colors duration-700 font-light max-w-[65ch]">
-                {service.lead}
-              </p>
-
-              <div className="mt-8 flex items-center gap-3 text-[10px] font-bold uppercase tracking-widest text-accent opacity-0 translate-y-4 transition-all duration-500 group-hover:opacity-100 group-hover:translate-y-0">
-                Explore Specification <span className="text-lg leading-none">→</span>
-              </div>
-            </div>
-          </button>
-        </RevealBlock>
-      </SheetTrigger>
-
-      <SheetContent
-        side="right"
-        className="w-full sm:max-w-xl md:max-w-2xl overflow-y-auto bg-surface border-l border-line p-0"
+    <RevealBlock delay={index * 50}>
+      <a
+        href={whatsappUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="group text-left relative flex h-[400px] w-full flex-col justify-end overflow-hidden rounded-[2rem] bg-graphite transition-all duration-1000 hover:-translate-y-2 hover:shadow-[0_25px_50px_-12px_rgba(212,175,55,0.25)] cursor-pointer will-change-transform border border-line/10 ease-[cubic-bezier(0.25,1,0.5,1)]"
       >
-        <div className="p-8 md:p-12">
-          <SheetHeader className="mb-10 text-left">
-            <div className="flex items-center gap-4 text-accent mb-4">
-              <div className="p-3 bg-background rounded-full border border-line">
-                <Icon className="h-6 w-6" />
-              </div>
-              <span className="text-eyebrow tracking-widest">{service.n} — Enterprise Service</span>
-            </div>
-            <SheetTitle className="text-display-md text-foreground font-display">
-              {service.title}
-            </SheetTitle>
-          </SheetHeader>
+        {/* Background Image with Overlay */}
+        <div className="absolute inset-0 z-0 overflow-hidden">
+          <img
+            src={service.image}
+            alt={service.title}
+            loading="lazy"
+            className="w-full h-full object-cover opacity-30 group-hover:opacity-50 group-hover:scale-110 transition-all duration-1000 ease-[cubic-bezier(0.25,1,0.5,1)] will-change-transform"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-transparent" />
+        </div>
 
-          <div className="mb-12 overflow-hidden rounded-2xl shadow-2xl border border-line/20">
-            <img
-              src={service.image}
-              alt={service.title}
-              className="w-full h-80 object-cover hover:scale-105 transition-transform duration-1000"
-            />
+        <div className="relative z-10 p-8 md:p-10">
+          <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-full bg-background/50 backdrop-blur-md text-accent ring-1 ring-white/10 transition-all duration-700 ease-[cubic-bezier(0.25,1,0.5,1)] group-hover:scale-110 group-hover:bg-accent group-hover:text-background shadow-lg">
+            <Icon className="h-5 w-5" />
           </div>
+          <h3 className="text-2xl md:text-3xl font-extrabold text-foreground mb-4 font-display tracking-tight leading-tight group-hover:text-accent transition-colors duration-700 drop-shadow-md">
+            {service.title}
+          </h3>
+          <p className="text-[15px] leading-loose text-ivory/80 group-hover:text-ivory transition-colors duration-700 font-light max-w-[65ch]">
+            {service.lead}
+          </p>
 
-          <div className="space-y-12">
-            <div>
-              <h4 className="text-eyebrow text-accent mb-4">Specification Overview</h4>
-              <p className="text-mute leading-relaxed text-lg font-light">
-                {service.details.description}
-              </p>
-            </div>
-
-            <div>
-              <h4 className="text-eyebrow text-accent mb-5">Premium Value Additions</h4>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                {service.details.benefits.map((benefit, i) => (
-                  <div
-                    key={i}
-                    className="flex items-start gap-4 p-4 rounded-xl bg-background border border-line/40"
-                  >
-                    <CheckCircle2 className="h-5 w-5 text-accent shrink-0" />
-                    <span className="text-foreground text-[14px] font-medium">{benefit}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <div className="pt-8 border-t border-line">
-              <a
-                href="#contact"
-                className="group relative flex w-full items-center justify-center gap-3 overflow-hidden bg-accent px-8 py-5 text-[12px] tracking-[0.2em] font-bold uppercase text-background transition-all hover:shadow-[0_0_30px_var(--color-accent)]"
-              >
-                <div className="absolute inset-0 w-0 bg-foreground transition-all duration-500 ease-out group-hover:w-full z-0" />
-                <span className="relative z-10 flex items-center gap-3 transition-colors duration-500 group-hover:text-background">
-                  Procure {service.title} Services{" "}
-                  <span className="transition-transform duration-500 group-hover:translate-x-1">
-                    →
-                  </span>
-                </span>
-              </a>
-            </div>
+          <div className="mt-8 flex items-center gap-3 text-[10px] font-bold uppercase tracking-widest text-accent opacity-0 translate-y-4 transition-all duration-500 group-hover:opacity-100 group-hover:translate-y-0">
+            Chat on WhatsApp <span className="text-lg leading-none">→</span>
           </div>
         </div>
-      </SheetContent>
-    </Sheet>
+      </a>
+    </RevealBlock>
   );
 }
