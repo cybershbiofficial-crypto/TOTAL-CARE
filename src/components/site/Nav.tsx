@@ -1,4 +1,4 @@
-// Removed Link import since we use standard a tags for reload behavior
+import { Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { Magnetic } from "./Magnetic";
 import { Menu, X } from "lucide-react";
@@ -32,7 +32,11 @@ export function Nav() {
         }`}
       >
         <div className="mx-auto flex h-16 max-w-[1600px] items-center justify-between px-6 md:h-20 md:px-10">
-          <a href="/" className="group flex items-center gap-3 z-50">
+          <Link
+            to="/"
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            className="group flex items-center gap-3 z-50"
+          >
             <span
               aria-hidden
               className="grid h-8 w-8 place-items-center bg-accent text-[12px] font-bold tracking-[0.15em] text-foreground transition-colors group-hover:bg-foreground group-hover:text-background"
@@ -42,7 +46,7 @@ export function Nav() {
             <span className="text-mono-xs font-bold text-foreground tracking-widest">
               TOTAL CARE
             </span>
-          </a>
+          </Link>
 
           <nav aria-label="Primary" className="hidden items-center gap-10 md:flex">
             {links.map((l) => (

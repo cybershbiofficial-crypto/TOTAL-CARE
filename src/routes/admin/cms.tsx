@@ -41,14 +41,12 @@ function AdminCMS() {
     setSaving(id);
     try {
       const parsed = JSON.parse(newContent);
-      const { error } = await supabase
-        .from("cms_content")
-        .upsert({
-          id,
-          section: id.split("_")[0],
-          content_json: parsed,
-          updated_at: new Date().toISOString(),
-        });
+      const { error } = await supabase.from("cms_content").upsert({
+        id,
+        section: id.split("_")[0],
+        content_json: parsed,
+        updated_at: new Date().toISOString(),
+      });
       if (error) throw error;
       toast.success(`Updated ${id}`);
       fetchContent();
