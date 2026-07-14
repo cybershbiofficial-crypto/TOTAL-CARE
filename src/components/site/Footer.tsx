@@ -17,8 +17,10 @@ export function Footer() {
           <div className="md:col-span-3 md:col-start-8">
             <div className="text-mono-xs text-mute font-medium uppercase">Headquarters</div>
             <address className="mt-4 not-italic text-[14px] leading-relaxed text-foreground/80">
-              Shaik Zayed Road Satwa<br />
-              Dubai · United Arab Emirates<br />             <br />
+              Shaik Zayed Road Satwa
+              <br />
+              Dubai · United Arab Emirates
+              <br /> <br />
               +971 56 393 7512
             </address>
           </div>

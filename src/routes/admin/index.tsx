@@ -32,10 +32,7 @@ function AdminDashboard() {
   }, []);
 
   const updateStatus = async (id: string, newStatus: string) => {
-    const { error } = await supabase
-      .from("leads")
-      .update({ status: newStatus })
-      .eq("id", id);
+    const { error } = await supabase.from("leads").update({ status: newStatus }).eq("id", id);
     if (error) {
       toast.error("Failed to update status");
     } else {

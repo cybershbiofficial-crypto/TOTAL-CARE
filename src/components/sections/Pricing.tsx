@@ -29,7 +29,9 @@ export function Pricing() {
           <RevealBlock delay={100}>
             <div className="flex h-full flex-col rounded-[2rem] border border-line/40 bg-surface/30 p-10 md:p-12 transition-all duration-700 hover:border-line/80 hover:shadow-[0_15px_40px_-10px_rgba(0,0,0,0.2)] ease-[cubic-bezier(0.25,1,0.5,1)]">
               <div className="mb-8">
-                <h3 className="text-display-md text-foreground font-extrabold tracking-tight">Basic Plan</h3>
+                <h3 className="text-display-md text-foreground font-extrabold tracking-tight">
+                  Basic Plan
+                </h3>
                 <p className="mt-4 text-[15px] leading-loose text-ivory/80 font-light">
                   Ideal for routine maintenance, minor repairs, and individual trade services.
                 </p>
@@ -69,7 +71,9 @@ export function Pricing() {
               </div>
 
               <div className="mb-8 mt-4">
-                <h3 className="text-display-md text-foreground font-extrabold tracking-tight">Premium Plan</h3>
+                <h3 className="text-display-md text-foreground font-extrabold tracking-tight">
+                  Premium Plan
+                </h3>
                 <p className="mt-4 text-[15px] leading-loose text-ivory/80 font-light">
                   Comprehensive turnkey solutions and full-scale workforce deployment.
                 </p>

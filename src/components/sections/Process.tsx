@@ -75,7 +75,10 @@ export function Process() {
 
           <ol className="md:col-span-8">
             {steps.map((s, i) => (
-              <li key={s.n} className="border-b border-line/60 py-10 last:border-b-0 md:py-14 group">
+              <li
+                key={s.n}
+                className="border-b border-line/60 py-10 last:border-b-0 md:py-14 group"
+              >
                 <RevealBlock delay={i * 120} className="grid grid-cols-12 items-start gap-6">
                   <div className="col-span-2 font-display text-3xl font-medium text-accent md:col-span-1 md:text-4xl transition-colors group-hover:text-foreground">
                     {s.n}

@@ -10,7 +10,7 @@ export function Contact({ cmsContent }: { cmsContent?: any[] }) {
     city: "Dubai · United Arab Emirates",
     email: "totalcares.official@gmail.com",
     phone: "+971 56 393 7512",
-    hours: "Mon — Sat · 08:00 → 18:00 GST"
+    hours: "Mon — Sat · 08:00 → 18:00 GST",
   };
   const [sent, setSent] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -18,11 +18,11 @@ export function Contact({ cmsContent }: { cmsContent?: any[] }) {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (loading) return;
-    
+
     setLoading(true);
     const form = e.currentTarget;
     const formData = new FormData(form);
-    
+
     const name = formData.get("name") as string;
     const email = formData.get("email") as string;
     const phone = formData.get("phone") as string;
@@ -97,7 +97,7 @@ export function Contact({ cmsContent }: { cmsContent?: any[] }) {
                   {contactData.email}
                 </a>
                 <a
-                  href={`tel:${contactData.phone.replace(/[^0-9+]/g, '')}`}
+                  href={`tel:${contactData.phone.replace(/[^0-9+]/g, "")}`}
                   className="mt-1 block text-mute underline-offset-4 hover:text-accent hover:underline"
                 >
                   {contactData.phone}
@@ -112,11 +112,7 @@ export function Contact({ cmsContent }: { cmsContent?: any[] }) {
           </div>
 
           <RevealBlock delay={200} className="md:col-span-6 md:col-start-7" y={40}>
-            <form
-              onSubmit={handleSubmit}
-              className="space-y-10"
-              noValidate
-            >
+            <form onSubmit={handleSubmit} className="space-y-10" noValidate>
               <Field label="Name" name="name" autoComplete="name" required />
               <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
                 <Field label="Email" name="email" type="email" autoComplete="email" required />

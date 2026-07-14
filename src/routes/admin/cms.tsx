@@ -22,7 +22,7 @@ function AdminCMS() {
       .order("id", { ascending: true });
 
     if (error) {
-      if (error.code === '42P01') {
+      if (error.code === "42P01") {
         toast.error("cms_content table does not exist yet. Please run the SQL migration.");
       } else {
         toast.error("Failed to load CMS content: " + error.message);
@@ -43,7 +43,12 @@ function AdminCMS() {
       const parsed = JSON.parse(newContent);
       const { error } = await supabase
         .from("cms_content")
-        .upsert({ id, section: id.split('_')[0], content_json: parsed, updated_at: new Date().toISOString() });
+        .upsert({
+          id,
+          section: id.split("_")[0],
+          content_json: parsed,
+          updated_at: new Date().toISOString(),
+        });
       if (error) throw error;
       toast.success(`Updated ${id}`);
       fetchContent();
@@ -77,18 +82,20 @@ function AdminCMS() {
       <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
         <div>
           <h1 className="text-display-md text-foreground">Content Management System</h1>
-          <p className="text-mute mt-2">Edit homepage copy, themes, and site information directly.</p>
+          <p className="text-mute mt-2">
+            Edit homepage copy, themes, and site information directly.
+          </p>
         </div>
-        
+
         <div className="flex items-center gap-2">
-          <input 
-            type="text" 
-            placeholder="new_section_id" 
+          <input
+            type="text"
+            placeholder="new_section_id"
             value={newSectionId}
             onChange={(e) => setNewSectionId(e.target.value)}
             className="bg-background border border-line px-4 py-2 text-sm outline-none focus:border-accent w-48"
           />
-          <button 
+          <button
             onClick={handleCreateNew}
             disabled={saving === "new" || !newSectionId}
             className="bg-accent text-background px-4 py-2 flex items-center gap-2 hover:bg-foreground transition-colors disabled:opacity-50 text-[12px] uppercase font-bold tracking-widest"

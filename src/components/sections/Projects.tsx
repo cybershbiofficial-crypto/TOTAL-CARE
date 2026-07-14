@@ -6,37 +6,41 @@ import project3 from "@/assets/client/electrical-wiring.jpeg";
 import project4 from "@/assets/client/painting-wall.jpeg";
 
 const projects = [
-  { 
-    id: "proj-1", 
-    title: "Emirates Hills Villa", 
+  {
+    id: "proj-1",
+    title: "Emirates Hills Villa",
     location: "Emirates Hills, Sector E",
-    category: "Full Renovation", 
-    description: "Complete turnkey structural and interior transformation of a 12,000 sq ft luxury villa.",
-    img: project1 
+    category: "Full Renovation",
+    description:
+      "Complete turnkey structural and interior transformation of a 12,000 sq ft luxury villa.",
+    img: project1,
   },
-  { 
-    id: "proj-2", 
-    title: "Palm Jumeirah Penthouse", 
+  {
+    id: "proj-2",
+    title: "Palm Jumeirah Penthouse",
     location: "Palm Jumeirah",
-    category: "Interior Fit-out", 
-    description: "High-end bespoke joinery, smart home integration, and premium marble flooring installation.",
-    img: project2 
+    category: "Interior Fit-out",
+    description:
+      "High-end bespoke joinery, smart home integration, and premium marble flooring installation.",
+    img: project2,
   },
-  { 
-    id: "proj-3", 
-    title: "DIFC Corporate Office", 
+  {
+    id: "proj-3",
+    title: "DIFC Corporate Office",
     location: "Dubai International Financial Centre",
-    category: "Commercial Fit-out", 
-    description: "Modern open-plan corporate workspace with acoustic partitions and intelligent lighting.",
-    img: project3 
+    category: "Commercial Fit-out",
+    description:
+      "Modern open-plan corporate workspace with acoustic partitions and intelligent lighting.",
+    img: project3,
   },
-  { 
-    id: "proj-4", 
-    title: "Dubai Marina Apartment", 
+  {
+    id: "proj-4",
+    title: "Dubai Marina Apartment",
     location: "Dubai Marina",
-    category: "Luxury Redesign", 
-    description: "A complete aesthetic overhaul featuring custom wall paneling and bespoke kitchen design.",
-    img: project4 
+    category: "Luxury Redesign",
+    description:
+      "A complete aesthetic overhaul featuring custom wall paneling and bespoke kitchen design.",
+    img: project4,
   },
 ];
 
@@ -66,20 +70,24 @@ export function Projects() {
             </a>
           </RevealBlock>
         </div>
-        
+
         <div className="mt-20 grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-14">
           {projects.map((proj, i) => (
-            <RevealBlock key={proj.id} delay={i * 100} className="group relative flex flex-col h-[500px] md:h-[600px] overflow-hidden rounded-[2rem] bg-graphite cursor-pointer shadow-xl hover:shadow-[0_30px_60px_-15px_rgba(212,175,55,0.25)] transition-all duration-1000 hover:-translate-y-3 border border-line/10 ease-[cubic-bezier(0.25,1,0.5,1)]">
+            <RevealBlock
+              key={proj.id}
+              delay={i * 100}
+              className="group relative flex flex-col h-[500px] md:h-[600px] overflow-hidden rounded-[2rem] bg-graphite cursor-pointer shadow-xl hover:shadow-[0_30px_60px_-15px_rgba(212,175,55,0.25)] transition-all duration-1000 hover:-translate-y-3 border border-line/10 ease-[cubic-bezier(0.25,1,0.5,1)]"
+            >
               <div className="absolute inset-0 z-0 overflow-hidden">
-                <img 
-                  src={proj.img} 
-                  alt={proj.title} 
+                <img
+                  src={proj.img}
+                  alt={proj.title}
                   className="w-full h-full object-cover transition-transform duration-[1.5s] group-hover:scale-110 opacity-70 group-hover:opacity-100 ease-[cubic-bezier(0.25,1,0.5,1)]"
                 />
                 {/* Premium Luxury Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent opacity-90 group-hover:opacity-100 transition-opacity duration-1000" />
               </div>
-              
+
               <div className="relative z-10 flex flex-col justify-end h-full p-10 md:p-12 transform translate-y-8 group-hover:translate-y-0 transition-transform duration-700 ease-[cubic-bezier(0.25,1,0.5,1)]">
                 <div className="flex items-center justify-between mb-6">
                   <div className="inline-block bg-background/60 backdrop-blur-md border border-line/20 px-4 py-2 rounded-full text-[10px] font-bold uppercase tracking-widest text-accent shadow-sm">
@@ -89,13 +97,15 @@ export function Projects() {
                     <MapPin className="h-3.5 w-3.5 text-accent" /> {proj.location}
                   </div>
                 </div>
-                
-                <h3 className="text-3xl md:text-4xl font-display font-extrabold text-foreground mb-4 drop-shadow-lg group-hover:text-accent transition-colors duration-500 tracking-tight leading-tight">{proj.title}</h3>
-                
+
+                <h3 className="text-3xl md:text-4xl font-display font-extrabold text-foreground mb-4 drop-shadow-lg group-hover:text-accent transition-colors duration-500 tracking-tight leading-tight">
+                  {proj.title}
+                </h3>
+
                 <p className="text-ivory/80 text-[15px] leading-loose mb-8 opacity-0 group-hover:opacity-100 transition-opacity duration-700 delay-100 max-w-[65ch]">
                   {proj.description}
                 </p>
-                
+
                 <div className="flex items-center gap-3 text-[11px] font-bold uppercase tracking-widest text-accent opacity-0 group-hover:opacity-100 transition-all duration-700 delay-200 translate-y-4 group-hover:translate-y-0">
                   Read More <ArrowRight className="h-4 w-4" />
                 </div>

@@ -6,7 +6,8 @@ export function Hero({ cmsContent }: { cmsContent?: any[] }) {
   const heroData = cmsContent?.find((c) => c.id === "home_hero")?.content || {
     title: "Enterprise",
     subtitle: "Dubai's Premier Construction Partner",
-    description: "Elevating commercial and residential spaces across Dubai with unmatched craftsmanship, certified engineering, and flawless execution."
+    description:
+      "Elevating commercial and residential spaces across Dubai with unmatched craftsmanship, certified engineering, and flawless execution.",
   };
 
   return (
@@ -34,7 +35,7 @@ export function Hero({ cmsContent }: { cmsContent?: any[] }) {
               </span>
             </div>
           </RevealBlock>
-          
+
           <h1 className="text-display-xl text-foreground font-extrabold mb-8 drop-shadow-2xl tracking-tighter leading-none">
             <RevealText text={heroData.title} delay={100} />
             <br />
@@ -43,7 +44,10 @@ export function Hero({ cmsContent }: { cmsContent?: any[] }) {
             </span>
           </h1>
 
-          <RevealBlock delay={300} className="max-w-[55ch] text-lg text-ivory/90 leading-loose font-light mb-12 drop-shadow-sm">
+          <RevealBlock
+            delay={300}
+            className="max-w-[55ch] text-lg text-ivory/90 leading-loose font-light mb-12 drop-shadow-sm"
+          >
             {heroData.description}
           </RevealBlock>
 
@@ -55,11 +59,14 @@ export function Hero({ cmsContent }: { cmsContent?: any[] }) {
               >
                 <div className="absolute inset-0 w-0 bg-foreground transition-all duration-700 ease-[cubic-bezier(0.25,1,0.5,1)] group-hover:w-full z-0" />
                 <span className="relative z-10 flex items-center gap-3 transition-colors duration-700 group-hover:text-background">
-                  Consult Our Experts <span className="transition-transform duration-700 group-hover:translate-x-2">→</span>
+                  Consult Our Experts{" "}
+                  <span className="transition-transform duration-700 group-hover:translate-x-2">
+                    →
+                  </span>
                 </span>
               </a>
             </Magnetic>
-            
+
             <a
               href="#projects"
               className="group flex items-center gap-3 px-8 py-5 text-[12px] font-bold uppercase tracking-[0.2em] text-foreground transition-colors hover:text-accent"
@@ -73,11 +80,15 @@ export function Hero({ cmsContent }: { cmsContent?: any[] }) {
         <div className="lg:col-span-4 lg:text-right hidden lg:flex flex-col items-end gap-12">
           <RevealBlock delay={500}>
             <p className="text-display-md text-foreground drop-shadow-md">500+</p>
-            <p className="text-[10px] font-bold uppercase tracking-widest text-accent mt-2">Projects Completed</p>
+            <p className="text-[10px] font-bold uppercase tracking-widest text-accent mt-2">
+              Projects Completed
+            </p>
           </RevealBlock>
           <RevealBlock delay={600}>
             <p className="text-display-md text-foreground drop-shadow-md">100%</p>
-            <p className="text-[10px] font-bold uppercase tracking-widest text-accent mt-2">Compliance Rating</p>
+            <p className="text-[10px] font-bold uppercase tracking-widest text-accent mt-2">
+              Compliance Rating
+            </p>
           </RevealBlock>
         </div>
       </div>

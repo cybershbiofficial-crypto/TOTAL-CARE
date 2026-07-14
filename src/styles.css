@@ -58,20 +58,20 @@
   --foreground: oklch(0.98 0.01 90); /* Warm White text on dark bg */
 
   /* Soft Beige / Stone Gray sections */
-  --surface: oklch(0.20 0.01 250);
+  --surface: oklch(0.2 0.01 250);
   --surface-2: oklch(0.25 0.01 250);
 
   /* Warm White / Ivory */
   --ivory: oklch(0.98 0.02 85);
-  
+
   /* Stone Gray for cards/graphite */
   --graphite: oklch(0.35 0.01 250);
 
   /* Soft Beige for muted text */
   --mute: oklch(0.85 0.02 80);
-  
+
   /* Subtle lines */
-  --line: oklch(0.30 0.01 250);
+  --line: oklch(0.3 0.01 250);
 
   /* Champagne Gold accent */
   --accent: oklch(0.82 0.08 85);

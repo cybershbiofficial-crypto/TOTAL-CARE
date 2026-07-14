@@ -1,4 +1,4 @@
-import { Link } from "@tanstack/react-router";
+// Removed Link import since we use standard a tags for reload behavior
 import { useEffect, useState } from "react";
 import { Magnetic } from "./Magnetic";
 import { Menu, X } from "lucide-react";
@@ -32,15 +32,17 @@ export function Nav() {
         }`}
       >
         <div className="mx-auto flex h-16 max-w-[1600px] items-center justify-between px-6 md:h-20 md:px-10">
-          <Link to="/" className="group flex items-center gap-3 z-50">
+          <a href="/" className="group flex items-center gap-3 z-50">
             <span
               aria-hidden
               className="grid h-8 w-8 place-items-center bg-accent text-[12px] font-bold tracking-[0.15em] text-foreground transition-colors group-hover:bg-foreground group-hover:text-background"
             >
               TC
             </span>
-            <span className="text-mono-xs font-bold text-foreground tracking-widest">TOTAL CARE</span>
-          </Link>
+            <span className="text-mono-xs font-bold text-foreground tracking-widest">
+              TOTAL CARE
+            </span>
+          </a>
 
           <nav aria-label="Primary" className="hidden items-center gap-10 md:flex">
             {links.map((l) => (
@@ -109,11 +111,14 @@ export function Nav() {
             ))}
           </nav>
           <div className="mt-12 border-t border-line/60 pt-8">
-            <a href="mailto:info@totalcare.com" className="block text-mute mb-2 hover:text-foreground">
-              info@totalcare.com
+            <a
+              href="mailto:totalcares.official@gmail.com"
+              className="block text-mute mb-2 hover:text-foreground"
+            >
+              totalcares.official@gmail.com
             </a>
-            <a href="tel:+97150000000" className="block text-mute hover:text-foreground">
-              +971 50 000 0000
+            <a href="tel:+971563937512" className="block text-mute hover:text-foreground">
+              +971 56 393 7512
             </a>
           </div>
         </div>

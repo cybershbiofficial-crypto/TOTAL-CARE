@@ -36,16 +36,27 @@ function AdminLayout() {
     }
   }, [loading, session, location.pathname, navigate]);
 
-  if (loading) return <div className="p-10 text-foreground flex items-center justify-center min-h-screen">Loading Admin Interface...</div>;
+  if (loading)
+    return (
+      <div className="p-10 text-foreground flex items-center justify-center min-h-screen">
+        Loading Admin Interface...
+      </div>
+    );
 
   return (
     <div className="min-h-screen bg-background text-foreground font-sans">
       <header className="border-b border-line p-6 flex justify-between items-center bg-surface">
         <div className="flex items-center gap-6">
-          <Link to="/admin" className="text-xl font-display font-medium tracking-widest text-accent uppercase">
+          <Link
+            to="/admin"
+            className="text-xl font-display font-medium tracking-widest text-accent uppercase"
+          >
             Total Care Admin
           </Link>
-          <Link to="/admin/cms" className="text-sm font-medium tracking-widest text-mute uppercase hover:text-foreground transition-colors">
+          <Link
+            to="/admin/cms"
+            className="text-sm font-medium tracking-widest text-mute uppercase hover:text-foreground transition-colors"
+          >
             CMS
           </Link>
         </div>

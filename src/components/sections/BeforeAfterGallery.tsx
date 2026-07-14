@@ -75,9 +75,14 @@ const galleryData = [
 export function BeforeAfterGallery() {
   const [activeCategory, setActiveCategory] = useState("All");
 
-  const filteredGallery = activeCategory === "All" 
-    ? galleryData 
-    : galleryData.filter(item => item.category === activeCategory || (activeCategory === "Before/After" && item.type === "before-after"));
+  const filteredGallery =
+    activeCategory === "All"
+      ? galleryData
+      : galleryData.filter(
+          (item) =>
+            item.category === activeCategory ||
+            (activeCategory === "Before/After" && item.type === "before-after"),
+        );
 
   return (
     <section className="relative bg-background py-16 md:py-24 border-t border-line/20">
@@ -96,8 +101,12 @@ export function BeforeAfterGallery() {
             </h2>
           </div>
 
-          <RevealBlock delay={200} className="max-w-md text-[15px] leading-relaxed text-mute border-l border-accent/50 pl-6">
-            Explore our curated gallery of high-end turnkey renovations, custom carpentry, and complete commercial fit-outs across the UAE.
+          <RevealBlock
+            delay={200}
+            className="max-w-md text-[15px] leading-relaxed text-mute border-l border-accent/50 pl-6"
+          >
+            Explore our curated gallery of high-end turnkey renovations, custom carpentry, and
+            complete commercial fit-outs across the UAE.
           </RevealBlock>
         </div>
 
@@ -112,9 +121,11 @@ export function BeforeAfterGallery() {
               key={cat}
               onClick={() => setActiveCategory(cat)}
               className={`px-6 py-2.5 rounded-full text-[11px] font-bold uppercase tracking-widest transition-all duration-500 border
-                ${activeCategory === cat 
-                  ? 'bg-foreground text-background border-foreground shadow-lg' 
-                  : 'bg-transparent text-foreground border-line/50 hover:border-accent hover:text-accent'}`}
+                ${
+                  activeCategory === cat
+                    ? "bg-foreground text-background border-foreground shadow-lg"
+                    : "bg-transparent text-foreground border-line/50 hover:border-accent hover:text-accent"
+                }`}
             >
               {cat}
             </button>
@@ -126,7 +137,7 @@ export function BeforeAfterGallery() {
           {filteredGallery.map((item, index) => (
             <Dialog key={item.id}>
               <DialogTrigger asChild>
-                <div 
+                <div
                   className={`group relative overflow-hidden rounded-xl bg-graphite cursor-pointer transition-all duration-700 hover:-translate-y-1 hover:shadow-2xl hover:shadow-accent/10 border border-line/10 ${item.span}`}
                 >
                   {item.type === "standard" ? (
@@ -144,12 +155,24 @@ export function BeforeAfterGallery() {
                       {/* Simple CSS-based Before/After split for the thumbnail */}
                       <div className="absolute inset-0 flex">
                         <div className="w-1/2 h-full overflow-hidden relative">
-                          <img src={item.before} className="absolute h-full w-[200%] max-w-none object-cover left-0 filter grayscale contrast-125" alt="Before" />
-                          <div className="absolute top-4 left-4 bg-background/80 backdrop-blur text-[10px] uppercase tracking-widest font-bold px-2 py-1 rounded text-foreground">Before</div>
+                          <img
+                            src={item.before}
+                            className="absolute h-full w-[200%] max-w-none object-cover left-0 filter grayscale contrast-125"
+                            alt="Before"
+                          />
+                          <div className="absolute top-4 left-4 bg-background/80 backdrop-blur text-[10px] uppercase tracking-widest font-bold px-2 py-1 rounded text-foreground">
+                            Before
+                          </div>
                         </div>
                         <div className="w-1/2 h-full overflow-hidden relative border-l border-accent">
-                          <img src={item.after} className="absolute h-full w-[200%] max-w-none object-cover right-0 transition-transform duration-1000 group-hover:scale-105" alt="After" />
-                          <div className="absolute top-4 right-4 bg-accent/90 backdrop-blur text-[10px] uppercase tracking-widest font-bold px-2 py-1 rounded text-background">After</div>
+                          <img
+                            src={item.after}
+                            className="absolute h-full w-[200%] max-w-none object-cover right-0 transition-transform duration-1000 group-hover:scale-105"
+                            alt="After"
+                          />
+                          <div className="absolute top-4 right-4 bg-accent/90 backdrop-blur text-[10px] uppercase tracking-widest font-bold px-2 py-1 rounded text-background">
+                            After
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -162,11 +185,19 @@ export function BeforeAfterGallery() {
                         {item.category}
                       </span>
                       <div className="h-10 w-10 rounded-full bg-background/80 backdrop-blur-md flex items-center justify-center text-foreground hover:bg-accent hover:text-background transition-colors duration-300">
-                        {item.type === "before-after" ? <Eye className="h-4 w-4" /> : <Maximize2 className="h-4 w-4" />}
+                        {item.type === "before-after" ? (
+                          <Eye className="h-4 w-4" />
+                        ) : (
+                          <Maximize2 className="h-4 w-4" />
+                        )}
                       </div>
                     </div>
-                    <h3 className="text-2xl font-display font-bold text-foreground drop-shadow-md">{item.title}</h3>
-                    <p className="text-[13px] text-ivory/80 font-light drop-shadow-sm">{item.location}</p>
+                    <h3 className="text-2xl font-display font-bold text-foreground drop-shadow-md">
+                      {item.title}
+                    </h3>
+                    <p className="text-[13px] text-ivory/80 font-light drop-shadow-sm">
+                      {item.location}
+                    </p>
                   </div>
                 </div>
               </DialogTrigger>
@@ -174,27 +205,45 @@ export function BeforeAfterGallery() {
               <DialogContent className="max-w-6xl p-0 overflow-hidden bg-background border-line/20 rounded-2xl">
                 {item.type === "standard" ? (
                   <div className="relative w-full h-[80vh]">
-                    <img src={item.image} alt={item.title} className="w-full h-full object-contain bg-black/5" />
+                    <img
+                      src={item.image}
+                      alt={item.title}
+                      className="w-full h-full object-contain bg-black/5"
+                    />
                     <div className="absolute bottom-0 inset-x-0 p-8 bg-gradient-to-t from-background to-transparent">
                       <div className="inline-block px-4 py-1.5 bg-accent text-background text-[11px] font-bold uppercase tracking-widest mb-3 rounded-full">
                         {item.category}
                       </div>
-                      <h3 className="text-4xl font-display font-bold text-foreground">{item.title}</h3>
+                      <h3 className="text-4xl font-display font-bold text-foreground">
+                        {item.title}
+                      </h3>
                       <p className="text-mute text-lg mt-2">{item.location}</p>
                     </div>
                   </div>
                 ) : (
                   <div className="relative w-full h-[80vh] flex flex-col md:flex-row bg-background">
                     <div className="w-full md:w-1/2 h-1/2 md:h-full relative overflow-hidden group/before">
-                      <img src={item.before} className="w-full h-full object-cover filter grayscale contrast-125 transition-transform duration-1000 group-hover/before:scale-105" alt="Before" />
+                      <img
+                        src={item.before}
+                        className="w-full h-full object-cover filter grayscale contrast-125 transition-transform duration-1000 group-hover/before:scale-105"
+                        alt="Before"
+                      />
                       <div className="absolute inset-0 bg-black/20" />
-                      <div className="absolute top-6 left-6 px-4 py-2 bg-background/80 backdrop-blur-md text-foreground text-xs font-bold tracking-widest uppercase rounded">Pre-Renovation</div>
+                      <div className="absolute top-6 left-6 px-4 py-2 bg-background/80 backdrop-blur-md text-foreground text-xs font-bold tracking-widest uppercase rounded">
+                        Pre-Renovation
+                      </div>
                     </div>
                     <div className="w-px h-full bg-accent relative z-10 hidden md:block" />
                     <div className="h-px w-full bg-accent relative z-10 md:hidden" />
                     <div className="w-full md:w-1/2 h-1/2 md:h-full relative overflow-hidden group/after">
-                      <img src={item.after} className="w-full h-full object-cover transition-transform duration-1000 group-hover/after:scale-105" alt="After" />
-                      <div className="absolute bottom-6 right-6 px-4 py-2 bg-accent/90 backdrop-blur-md text-background text-xs font-bold tracking-widest uppercase rounded shadow-2xl">Post-Renovation</div>
+                      <img
+                        src={item.after}
+                        className="w-full h-full object-cover transition-transform duration-1000 group-hover/after:scale-105"
+                        alt="After"
+                      />
+                      <div className="absolute bottom-6 right-6 px-4 py-2 bg-accent/90 backdrop-blur-md text-background text-xs font-bold tracking-widest uppercase rounded shadow-2xl">
+                        Post-Renovation
+                      </div>
                     </div>
                   </div>
                 )}

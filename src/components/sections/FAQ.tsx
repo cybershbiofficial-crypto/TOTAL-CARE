@@ -42,9 +42,7 @@ export function FAQ() {
           <div className="text-center text-mono-xs font-medium uppercase tracking-widest text-accent">
             FAQ
           </div>
-          <h2 className="mt-6 text-center text-display-md text-foreground">
-            Common Inquiries
-          </h2>
+          <h2 className="mt-6 text-center text-display-md text-foreground">Common Inquiries</h2>
         </RevealBlock>
 
         <RevealBlock delay={200} className="mt-16">
