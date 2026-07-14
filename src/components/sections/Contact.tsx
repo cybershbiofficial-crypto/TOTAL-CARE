@@ -6,9 +6,9 @@ import { toast } from "sonner";
 
 export function Contact({ cmsContent }: { cmsContent?: any[] }) {
   const contactData = cmsContent?.find((c) => c.id === "contact_info")?.content || {
-    address: "Al Quoz Industrial Area 4",
+    address: "Shaik Zayed Road Satwa",
     city: "Dubai · United Arab Emirates",
-    email: "info@totalcare.ae",
+    email: "totalcares.official@gmail.com",
     phone: "+971 56 393 7512",
     hours: "Mon — Sat · 08:00 → 18:00 GST"
   };
