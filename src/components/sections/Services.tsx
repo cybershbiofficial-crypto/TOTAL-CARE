@@ -13,7 +13,7 @@ import {
   Building,
   PhoneCall,
 } from "lucide-react";
-import imgWaterproofing from "@/assets/client/plumbing-under-sink.jpeg";
+// Removed imgWaterproofing import as we now use the public webp path
 import imgPainting from "@/assets/client/painting-yellow.jpeg";
 import imgTiling from "@/assets/client/flooring-tiling.jpeg";
 import imgDoorPolish from "@/assets/client/door-installation.jpeg";
@@ -31,7 +31,7 @@ const services = [
     n: "01",
     id: "waterproofing",
     icon: Shield,
-    image: imgWaterproofing,
+    image: "/images/srv-waterproofing.webp",
     title: "Waterproofing",
     lead: "Professional roof and structural membrane waterproofing systems.",
     items: ["Roof waterproofing", "Wet area sealing", "Basement tanking", "Leakage injection"],
