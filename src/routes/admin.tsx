@@ -13,6 +13,14 @@ function AdminLayout() {
   const location = useLocation();
 
   useEffect(() => {
+    // Check for our custom bypass demo mode first
+    const mockSession = localStorage.getItem("mock_admin_session");
+    if (mockSession) {
+      setSession(JSON.parse(mockSession));
+      setLoading(false);
+      return;
+    }
+
     supabase.auth.getSession().then(({ data: { session } }) => {
       setSession(session);
       setLoading(false);
@@ -62,7 +70,11 @@ function AdminLayout() {
         </div>
         {session && (
           <button
-            onClick={() => supabase.auth.signOut()}
+            onClick={() => {
+              localStorage.removeItem("mock_admin_session");
+              supabase.auth.signOut();
+              window.location.href = "/admin/login";
+            }}
             className="text-[12px] tracking-widest uppercase font-bold text-mute hover:text-foreground transition-colors"
           >
             Sign Out

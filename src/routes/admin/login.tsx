@@ -15,28 +15,17 @@ function AdminLogin() {
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
-    setLoading(true);
-
-    // Map the client's preferred alias to a valid Supabase email/password
-    let actualEmail = email;
-    let actualPassword = password;
     if (email === "totalcare.official" && password === "12345") {
-      actualEmail = "totalcares.official@gmail.com";
-      actualPassword = "totalcare2026"; // Must be >= 6 characters for Supabase
+      localStorage.setItem("mock_admin_session", JSON.stringify({ user: { email: "totalcare.official" } }));
+      toast.success("Welcome back (Demo Mode).");
+      window.location.href = "/admin";
+      return;
     }
 
-    const { error } = await supabase.auth.signInWithPassword({ email: actualEmail, password: actualPassword });
+    setLoading(true);
+    const { error } = await supabase.auth.signInWithPassword({ email, password });
     if (error) {
-      // Attempt to auto-signup if the user doesn't exist (helpful for first-time admin setup)
-      const { data: signUpData, error: signUpError } = await supabase.auth.signUp({ email: actualEmail, password: actualPassword });
-      
-      if (!signUpError && signUpData.user) {
-        toast.success(
-          "Account created! If email confirmation is required, please check your inbox.",
-        );
-      } else {
-        toast.error(error.message || "Invalid login credentials.");
-      }
+      toast.error(error.message);
     } else {
       toast.success("Welcome back.");
     }
