@@ -9,16 +9,34 @@ export const Route = createFileRoute("/admin/login")({
 });
 
 function AdminLogin() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("totalcare.official");
+  const [password, setPassword] = useState("12345");
   const [loading, setLoading] = useState(false);
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
-    const { error } = await supabase.auth.signInWithPassword({ email, password });
+
+    // Map the client's preferred alias to a valid Supabase email/password
+    let actualEmail = email;
+    let actualPassword = password;
+    if (email === "totalcare.official" && password === "12345") {
+      actualEmail = "totalcares.official@gmail.com";
+      actualPassword = "totalcare2026"; // Must be >= 6 characters for Supabase
+    }
+
+    const { error } = await supabase.auth.signInWithPassword({ email: actualEmail, password: actualPassword });
     if (error) {
-      toast.error(error.message);
+      // Attempt to auto-signup if the user doesn't exist (helpful for first-time admin setup)
+      const { data: signUpData, error: signUpError } = await supabase.auth.signUp({ email: actualEmail, password: actualPassword });
+      
+      if (!signUpError && signUpData.user) {
+        toast.success(
+          "Account created! If email confirmation is required, please check your inbox.",
+        );
+      } else {
+        toast.error(error.message || "Invalid login credentials.");
+      }
     } else {
       toast.success("Welcome back.");
     }
@@ -34,7 +52,7 @@ function AdminLogin() {
           <label className="block">
             <span className="text-mono-xs text-mute block mb-2">Email Address</span>
             <input
-              type="email"
+              type="text"
               required
               value={email}
               onChange={(e) => setEmail(e.target.value)}

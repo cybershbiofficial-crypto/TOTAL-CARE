@@ -1,0 +1,30 @@
+# TOTAL CARE - AI Agent Protocol
+
+## Project Identity
+- **Project**: TOTAL CARE
+- **Organization**: TOTAL CARE Dubai
+- **Core Scope**: B2B/B2C Premier Labour Supply & High-End Renovation
+
+## Mandatory Memory Consult
+CRITICAL SYSTEM PROTOCOL: You must consult `.ai_memory/context/README.md` and read the error logs in `.ai_memory/context/06_learnings_observations/L-002_mistakes_and_regressions.md` before executing any codebase edits.
+
+## Startup Sequence
+1. Read `.ai_memory/context/README.md`
+2. Follow links to `K-001`, `D-001`, and `L-002`.
+
+## Non-negotiables
+- DO NOT rewrite, force push, rebase, or squash Git history (Lovable sync constraint).
+- MUST deploy updates using `vercel --prod` to bypass webhook delays.
+- STRICT ADHERENCE to the premium, luxury brand styling (GSAP, dark UI).
+- Never break TanStack Start SSR or file-based routing.
+- Do not build complex email forms; WhatsApp direct links are the sole conversion focus.
+
+## Memory Maintenance
+- If a file is modified, document changes and update associated memory neurons.
+- If a bug or compiling error is encountered and resolved, append a new error tracking entry into `L-002`.
+- Never delete neurons; deprecate and supersede them.
+
+## Code Convention
+Use `@memory: [IDs]` in header comments of major edited files to trace back to architecture context.
+
+Link to: `.cursor/rules/total-care-memory.mdc`

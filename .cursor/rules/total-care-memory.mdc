@@ -1,0 +1,10 @@
+---
+description: TOTAL CARE Neural Memory Layer — always-on context and update protocol
+alwaysApply: true
+---
+
+- Before you work: Follow startup sequence in `.ai_memory/context/README.md`.
+- Memory consulted: `K-001`, `D-001`, `L-002`.
+- Locked constraints: Do not violate Lovable git sync; do not bypass Vercel CLI for prod deploy; do not break GSAP luxury UI.
+- After you work: Update `L-002` if regressions were fixed.
+- Canonical path: `.ai_memory/context/` only.
