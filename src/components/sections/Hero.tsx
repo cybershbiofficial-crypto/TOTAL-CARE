@@ -28,9 +28,9 @@ export function Hero({ cmsContent }: { cmsContent?: any[] }) {
       <div className="relative z-10 mx-auto max-w-[1600px] px-6 md:px-10 w-full grid grid-cols-1 lg:grid-cols-12 gap-8 items-end pb-16">
         <div className="lg:col-span-8 max-w-3xl">
           <RevealBlock>
-            <div className="mb-6 inline-flex items-center gap-3 border border-line/50 bg-surface/80 backdrop-blur-md px-5 py-2.5 rounded-full shadow-lg">
-              <span className="flex h-2.5 w-2.5 rounded-full bg-accent animate-pulse shadow-[0_0_10px_var(--color-accent)]"></span>
-              <span className="text-[11px] font-bold uppercase tracking-widest text-foreground">
+            <div className="mb-6 inline-flex items-center gap-2 md:gap-3 border border-line/50 bg-surface/80 backdrop-blur-md px-4 py-2 md:px-5 md:py-2.5 rounded-full shadow-lg">
+              <span className="flex h-2 w-2 md:h-2.5 md:w-2.5 rounded-full bg-accent animate-pulse shadow-[0_0_10px_var(--color-accent)]"></span>
+              <span className="text-[9px] md:text-[11px] font-bold uppercase tracking-wider md:tracking-widest text-foreground">
                 {heroData.subtitle}
               </span>
             </div>

@@ -4,9 +4,8 @@ import { Magnetic } from "./Magnetic";
 import { Menu, X } from "lucide-react";
 
 const links = [
-  { label: "Projects", href: "#projects" },
-  { label: "Services", href: "#services" },
   { label: "03 — Signature Portfolio", href: "#projects" },
+  { label: "Services", href: "#services" },
   { label: "About", href: "#philosophy" },
   { label: "Contact", href: "#contact" },
 ];
