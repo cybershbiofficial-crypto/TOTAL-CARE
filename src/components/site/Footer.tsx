@@ -28,13 +28,15 @@ export function Footer() {
           <div className="md:col-span-2 md:col-start-11">
             <div className="text-mono-xs text-mute font-medium uppercase">Navigate</div>
             <ul className="mt-4 space-y-2 text-[14px] text-foreground/80">
-              {["Projects", "Services", "Process", "About", "Contact"].map((l) => (
-                <li key={l}>
-                  <a
-                    href={l === "About" ? "#philosophy" : `#${l.toLowerCase()}`}
-                    className="hover:text-accent transition-colors"
-                  >
-                    {l}
+              {[
+                { label: "03 — Signature Portfolio", href: "#projects" },
+                { label: "Services", href: "#services" },
+                { label: "About", href: "#philosophy" },
+                { label: "Contact", href: "#contact" },
+              ].map((l) => (
+                <li key={l.label}>
+                  <a href={l.href} className="hover:text-accent transition-colors">
+                    {l.label}
                   </a>
                 </li>
               ))}
