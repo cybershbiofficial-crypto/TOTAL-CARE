@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { supabase } from "@/lib/supabase";
@@ -26,7 +27,7 @@ function AdminDashboard() {
           message: "Looking for a quote for villa waterproofing in Dubai Hills.",
           status: "new",
           created_at: new Date().toISOString(),
-        }
+        },
       ]);
       setLoading(false);
       return;

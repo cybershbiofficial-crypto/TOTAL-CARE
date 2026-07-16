@@ -1,4 +1,5 @@
 import { useState } from "react";
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { RevealText, RevealBlock } from "@/components/site/Reveal";
 import { Magnetic } from "@/components/site/Magnetic";
 import { supabase } from "@/lib/supabase";

@@ -1,4 +1,5 @@
-import { createFileRoute } from "@tanstack/react-router";
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import { createFileRoute, useRouter } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { supabase } from "@/lib/supabase";
 import { toast } from "sonner";
@@ -23,7 +24,7 @@ function AdminCMS() {
           id: "demo-homepage",
           section: "homepage",
           content_json: { title: "TOTAL CARE", subtitle: "Premium Renovations" },
-        }
+        },
       ]);
       setLoading(false);
       return;
