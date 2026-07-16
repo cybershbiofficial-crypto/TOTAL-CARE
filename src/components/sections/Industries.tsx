@@ -13,7 +13,7 @@ const industries = [
 
 export function Industries() {
   return (
-    <section id="industries" className="relative bg-surface py-28 md:py-40">
+    <section id="industries" className="relative bg-surface py-10 md:py-14 lg:py-18">
       <div className="mx-auto max-w-[1600px] px-6 md:px-10">
         <div className="flex flex-col justify-between gap-12 md:flex-row md:items-end">
           <div className="max-w-2xl">

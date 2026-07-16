@@ -73,7 +73,7 @@ export function Testimonials() {
   }, [emblaApi, onSelect]);
 
   return (
-    <section id="testimonials" className="relative bg-background py-16 md:py-24 overflow-hidden">
+    <section id="testimonials" className="relative bg-background py-10 md:py-14 lg:py-18 overflow-hidden">
       {/* Decorative Background Elements */}
       <div className="absolute top-0 right-0 -mr-40 -mt-40 w-96 h-96 bg-accent/5 rounded-full blur-[100px]" />
       <div className="absolute bottom-0 left-0 -ml-40 -mb-40 w-96 h-96 bg-foreground/5 rounded-full blur-[100px]" />

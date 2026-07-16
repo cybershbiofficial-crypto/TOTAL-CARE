@@ -36,7 +36,7 @@ const faqs = [
 
 export function FAQ() {
   return (
-    <section className="relative bg-background py-28 md:py-40">
+    <section className="relative bg-background py-10 md:py-14 lg:py-18">
       <div className="mx-auto max-w-[1000px] px-6 md:px-10">
         <RevealBlock>
           <div className="text-center text-mono-xs font-medium uppercase tracking-widest text-accent">

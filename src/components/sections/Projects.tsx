@@ -46,7 +46,7 @@ const projects = [
 
 export function Projects() {
   return (
-    <section id="projects" className="relative bg-surface py-16 md:py-24">
+    <section id="projects" className="relative bg-surface py-10 md:py-14 lg:py-18">
       <div className="mx-auto max-w-[1600px] px-6 md:px-10">
         <div className="flex flex-col md:flex-row justify-between md:items-end gap-12 border-b border-line pb-12">
           <div className="max-w-2xl">

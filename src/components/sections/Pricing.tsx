@@ -3,7 +3,7 @@ import { CheckCircle2 } from "lucide-react";
 
 export function Pricing() {
   return (
-    <section id="pricing" className="relative bg-background py-16 md:py-24">
+    <section id="pricing" className="relative bg-background py-10 md:py-14 lg:py-18">
       <div className="mx-auto max-w-[1600px] px-6 md:px-10">
         <div className="flex flex-col justify-between gap-12 md:flex-row md:items-end">
           <div className="max-w-2xl">

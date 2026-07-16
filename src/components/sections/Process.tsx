@@ -50,7 +50,7 @@ const steps = [
 
 export function Process() {
   return (
-    <section id="process" className="relative bg-surface py-28 md:py-40">
+    <section id="process" className="relative bg-surface py-10 md:py-14 lg:py-18">
       <div className="mx-auto max-w-[1600px] px-6 md:px-10">
         <div className="grid gap-16 md:grid-cols-12">
           <div className="md:col-span-4">

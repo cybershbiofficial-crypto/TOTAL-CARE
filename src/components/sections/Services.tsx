@@ -188,7 +188,7 @@ const services = [
 
 export function Services() {
   return (
-    <section id="services" className="relative bg-surface py-16 md:py-24">
+    <section id="services" className="relative bg-surface py-10 md:py-14 lg:py-18">
       <div className="mx-auto max-w-[1600px] px-6 md:px-10">
         <div className="flex flex-col justify-between gap-12 md:flex-row md:items-end">
           <div className="max-w-2xl">
@@ -231,12 +231,12 @@ function ServiceCard({ service, index }: { service: (typeof services)[number]; i
   const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
 
   return (
-    <RevealBlock delay={index * 50}>
+    <RevealBlock delay={index * 50} className="h-full">
       <a
         href={whatsappUrl}
         target="_blank"
         rel="noopener noreferrer"
-        className="group text-left relative flex h-[400px] w-full flex-col justify-end overflow-hidden rounded-[2rem] bg-graphite transition-all duration-1000 hover:-translate-y-2 hover:shadow-[0_25px_50px_-12px_rgba(212,175,55,0.25)] cursor-pointer will-change-transform border border-line/10 ease-[cubic-bezier(0.25,1,0.5,1)]"
+        className="group text-left relative flex h-full min-h-[420px] w-full flex-col justify-end overflow-hidden rounded-[2rem] bg-graphite transition-all duration-1000 hover:-translate-y-2 hover:shadow-[0_25px_50px_-12px_rgba(212,175,55,0.25)] cursor-pointer will-change-transform border border-line/10 ease-[cubic-bezier(0.25,1,0.5,1)]"
       >
         {/* Background Image with Overlay */}
         <div className="absolute inset-0 z-0 overflow-hidden">

@@ -62,7 +62,7 @@ export function Contact({ cmsContent }: { cmsContent?: any[] }) {
   };
 
   return (
-    <section id="contact" className="relative bg-background py-20 md:py-32">
+    <section id="contact" className="relative bg-background py-10 md:py-14 lg:py-18">
       <div className="mx-auto max-w-[1600px] px-6 md:px-10">
         <div className="grid gap-12 md:grid-cols-12 md:gap-16">
           <div className="md:col-span-5">

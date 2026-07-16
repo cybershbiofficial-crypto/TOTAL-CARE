@@ -2,7 +2,7 @@ import { RevealText, RevealBlock } from "@/components/site/Reveal";
 
 export function Philosophy() {
   return (
-    <section id="philosophy" className="relative bg-background py-32 md:py-48">
+    <section id="philosophy" className="relative bg-background py-10 md:py-14 lg:py-18">
       <div className="mx-auto max-w-[1600px] px-6 md:px-10">
         <div className="grid gap-16 md:grid-cols-12 md:gap-24">
           <div className="md:col-span-5">
