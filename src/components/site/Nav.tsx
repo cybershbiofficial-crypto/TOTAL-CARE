@@ -4,8 +4,9 @@ import { Magnetic } from "./Magnetic";
 import { Menu, X } from "lucide-react";
 
 const links = [
-  { label: "03 — Signature Portfolio", href: "#projects" },
+  { label: "Projects", href: "#projects" },
   { label: "Services", href: "#services" },
+  { label: "Process", href: "#process" },
   { label: "About", href: "#philosophy" },
   { label: "Contact", href: "#contact" },
 ];
@@ -61,71 +62,3 @@ export function Nav() {
               </a>
             ))}
           </nav>
-
-          <div className="hidden md:block">
-            <Magnetic strength={0.25}>
-              <a
-                href="#contact"
-                className="group inline-flex items-center gap-3 bg-foreground px-6 py-2.5 text-[12px] tracking-[0.15em] font-bold uppercase text-background transition-colors hover:bg-accent hover:text-foreground"
-              >
-                Request Quote
-                <span
-                  aria-hidden
-                  className="transition-transform duration-500 group-hover:translate-x-1"
-                >
-                  →
-                </span>
-              </a>
-            </Magnetic>
-          </div>
-
-          <div className="flex items-center gap-4 md:hidden z-50">
-            <a
-              href="#contact"
-              onClick={() => setMobileMenuOpen(false)}
-              className="bg-foreground px-4 py-2 text-[11px] font-bold uppercase tracking-[0.15em] text-background transition-colors hover:bg-accent hover:text-foreground"
-            >
-              Quote
-            </a>
-            <button
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 text-foreground transition-colors hover:text-accent"
-              aria-label="Toggle menu"
-            >
-              {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-            </button>
-          </div>
-        </div>
-      </header>
-
-      {/* Mobile Menu Overlay */}
-      {mobileMenuOpen && (
-        <div className="fixed inset-0 z-40 bg-background/95 backdrop-blur-lg pt-24 px-6 md:hidden">
-          <nav className="flex flex-col gap-8">
-            {links.map((l) => (
-              <a
-                key={l.href}
-                href={l.href}
-                onClick={() => setMobileMenuOpen(false)}
-                className="text-display-md text-foreground transition-colors hover:text-accent"
-              >
-                {l.label}
-              </a>
-            ))}
-          </nav>
-          <div className="mt-12 border-t border-line/60 pt-8">
-            <a
-              href="mailto:totalcares.official@gmail.com"
-              className="block text-mute mb-2 hover:text-foreground"
-            >
-              totalcares.official@gmail.com
-            </a>
-            <a href="tel:+971563937512" className="block text-mute hover:text-foreground">
-              +971 56 393 7512
-            </a>
-          </div>
-        </div>
-      )}
-    </>
-  );
-}
