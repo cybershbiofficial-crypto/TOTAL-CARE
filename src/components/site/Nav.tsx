@@ -4,12 +4,12 @@ import { Magnetic } from "./Magnetic";
 import { Menu, X } from "lucide-react";
 
 const links = [
-  { label: "03 — Signature Portfolio", href: "#projects" },
+  { label: "Projects", href: "#projects" },
   { label: "Services", href: "#services" },
+  { label: "Process", href: "#process" },
   { label: "About", href: "#philosophy" },
   { label: "Contact", href: "#contact" },
 ];
-
 export function Nav() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
