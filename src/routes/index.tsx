@@ -9,7 +9,7 @@ import { Philosophy } from "@/components/sections/Philosophy";
 import { Services } from "@/components/sections/Services";
 import { Projects } from "@/components/sections/Projects";
 import { BeforeAfterGallery } from "@/components/sections/BeforeAfterGallery";
-import { Pricing } from "@/components/sections/Pricing";
+
 import { Stats } from "@/components/sections/Stats";
 import { Testimonials } from "@/components/sections/Testimonials";
 import { Contact } from "@/components/sections/Contact";
@@ -35,7 +35,7 @@ function Index() {
         <Services />
         <Projects />
         <BeforeAfterGallery />
-        <Pricing />
+
         <Stats />
         <Testimonials />
         <Contact cmsContent={cmsContent} />
