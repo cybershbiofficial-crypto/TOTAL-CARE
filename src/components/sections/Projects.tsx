@@ -89,6 +89,7 @@ export function Projects() {
               </div>
 
               <div className="relative z-10 flex flex-col justify-end h-full p-10 md:p-12 transform translate-y-8 group-hover:translate-y-0 transition-transform duration-700 ease-[cubic-bezier(0.25,1,0.5,1)]">
+
                 <div className="flex items-center justify-between mb-6">
                   <div className="inline-block bg-background/60 backdrop-blur-md border border-line/20 px-4 py-2 rounded-full text-[10px] font-bold uppercase tracking-widest text-accent shadow-sm">
                     {proj.category}

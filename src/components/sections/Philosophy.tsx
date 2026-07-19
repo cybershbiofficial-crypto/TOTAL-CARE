@@ -34,7 +34,7 @@ export function Philosophy() {
               <p>
                 From rapid emergency plumbing support to deploying a complete structural team for a
                 corporate headquarters, we guarantee precision, strict compliance with safety
-                standards, and absolute transparency in pricing.
+                standards, and absolute transparency.
               </p>
             </RevealBlock>
 
@@ -45,7 +45,7 @@ export function Philosophy() {
               {[
                 ["01", "Certified Professionals"],
                 ["02", "Strict Safety Standards"],
-                ["03", "Transparent Pricing"],
+                ["03", "Absolute Transparency"],
                 ["04", "On-Time Completion"],
               ].map(([n, label]) => (
                 <div key={n}>

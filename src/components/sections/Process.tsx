@@ -14,7 +14,7 @@ const steps = [
   {
     n: "III",
     label: "Transparent Quotation",
-    body: "We provide clear, competitive pricing structures for both daily labour supply and complete turnkey project execution.",
+    body: "We provide clear, competitive estimates for both daily labour supply and complete turnkey project execution.",
   },
   {
     n: "IV",

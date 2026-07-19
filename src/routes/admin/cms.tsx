@@ -18,17 +18,6 @@ function AdminCMS() {
   const fetchContent = async () => {
     setLoading(true);
 
-    if (localStorage.getItem("mock_admin_session")) {
-      setContent([
-        {
-          id: "demo-homepage",
-          section: "homepage",
-          content_json: { title: "TOTAL CARE", subtitle: "Premium Renovations" },
-        },
-      ]);
-      setLoading(false);
-      return;
-    }
 
     const { data, error } = await supabase
       .from("cms_content")

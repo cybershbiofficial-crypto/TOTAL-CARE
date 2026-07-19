@@ -41,7 +41,7 @@ function AdminDashboard() {
     if (error) {
       toast.error("Failed to load leads: " + error.message);
     } else {
-      setLeads(data || []);
+      setLeads((data || []).filter((l: any) => !l.message?.startsWith("[ARCHIVED]")));
     }
     setLoading(false);
   };
@@ -60,6 +60,29 @@ function AdminDashboard() {
     }
   };
 
+  const archiveLead = async (lead: any) => {
+    if (!window.confirm("Are you sure you want to archive this lead?")) return;
+    const newMsg = "[ARCHIVED] " + (lead.message || "");
+    const { error } = await supabase.from("leads").update({ message: newMsg }).eq("id", lead.id);
+    if (error) {
+      toast.error("Failed to archive: " + error.message);
+    } else {
+      toast.success("Lead archived");
+      setLeads(leads.filter((l) => l.id !== lead.id));
+    }
+  };
+
+  const deleteLead = async (id: string) => {
+    if (!window.confirm("Are you sure you want to permanently delete this lead?")) return;
+    const { error } = await supabase.from("leads").delete().eq("id", id);
+    if (error) {
+      toast.error("Failed to delete lead: " + error.message);
+    } else {
+      toast.success("Lead deleted");
+      setLeads(leads.filter((l) => l.id !== id));
+    }
+  };
+
   return (
     <div className="space-y-12">
       <div>
@@ -71,11 +94,12 @@ function AdminDashboard() {
         <table className="w-full text-left text-sm">
           <thead className="bg-surface text-mono-xs text-mute uppercase tracking-widest border-b border-line">
             <tr>
-              <th className="px-6 py-4 font-medium">Date</th>
+              <th className="px-6 py-4 font-medium">Lead ID & Date</th>
               <th className="px-6 py-4 font-medium">Contact Details</th>
               <th className="px-6 py-4 font-medium">Service / Location</th>
               <th className="px-6 py-4 font-medium">Message</th>
               <th className="px-6 py-4 font-medium">Status</th>
+              <th className="px-6 py-4 font-medium text-right">Actions</th>
             </tr>
           </thead>
           <tbody className="divide-y divide-line/50">
@@ -87,7 +111,7 @@ function AdminDashboard() {
               </tr>
             ) : leads.length === 0 ? (
               <tr>
-                <td colSpan={5} className="px-6 py-8 text-center text-mute">
+                <td colSpan={6} className="px-6 py-8 text-center text-mute">
                   No leads found.
                 </td>
               </tr>
@@ -95,6 +119,9 @@ function AdminDashboard() {
               leads.map((lead) => (
                 <tr key={lead.id} className="hover:bg-surface/30 transition-colors">
                   <td className="px-6 py-4 whitespace-nowrap text-mute">
+                    <div className="font-mono text-xs text-foreground/80 mb-2 truncate max-w-[120px]" title={lead.id}>
+                      {lead.id.split('-')[0].toUpperCase()}
+                    </div>
                     {format(new Date(lead.created_at), "MMM d, yyyy")}
                     <div className="text-mono-xs mt-1 opacity-70">
                       {format(new Date(lead.created_at), "HH:mm")}
@@ -125,6 +152,20 @@ function AdminDashboard() {
                       <option value="contacted">Contacted</option>
                       <option value="resolved">Resolved</option>
                     </select>
+                  </td>
+                  <td className="px-6 py-4 whitespace-nowrap text-right space-x-2">
+                    <button
+                      onClick={() => archiveLead(lead)}
+                      className="text-xs text-mute hover:text-accent transition-colors underline-offset-4 hover:underline"
+                    >
+                      Archive
+                    </button>
+                    <button
+                      onClick={() => deleteLead(lead.id)}
+                      className="text-xs text-red-400 hover:text-red-500 transition-colors underline-offset-4 hover:underline"
+                    >
+                      Delete
+                    </button>
                   </td>
                 </tr>
               ))

@@ -15,15 +15,7 @@ function AdminLogin() {
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (email === "totalcare.official" && password === "12345") {
-      localStorage.setItem(
-        "mock_admin_session",
-        JSON.stringify({ user: { email: "totalcare.official" } }),
-      );
-      toast.success("Welcome back (Demo Mode).");
-      window.location.href = "/admin";
-      return;
-    }
+
 
     setLoading(true);
     const { error } = await supabase.auth.signInWithPassword({ email, password });
