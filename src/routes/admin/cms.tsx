@@ -18,7 +18,6 @@ function AdminCMS() {
   const fetchContent = async () => {
     setLoading(true);
 
-
     const { data, error } = await supabase
       .from("cms_content")
       .select("*")

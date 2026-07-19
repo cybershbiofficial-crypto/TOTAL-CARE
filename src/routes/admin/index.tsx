@@ -119,8 +119,11 @@ function AdminDashboard() {
               leads.map((lead) => (
                 <tr key={lead.id} className="hover:bg-surface/30 transition-colors">
                   <td className="px-6 py-4 whitespace-nowrap text-mute">
-                    <div className="font-mono text-xs text-foreground/80 mb-2 truncate max-w-[120px]" title={lead.id}>
-                      {lead.id.split('-')[0].toUpperCase()}
+                    <div
+                      className="font-mono text-xs text-foreground/80 mb-2 truncate max-w-[120px]"
+                      title={lead.id}
+                    >
+                      {lead.id.split("-")[0].toUpperCase()}
                     </div>
                     {format(new Date(lead.created_at), "MMM d, yyyy")}
                     <div className="text-mono-xs mt-1 opacity-70">

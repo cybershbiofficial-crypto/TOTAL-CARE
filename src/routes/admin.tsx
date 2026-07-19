@@ -14,8 +14,6 @@ function AdminLayout() {
   const location = useLocation();
 
   useEffect(() => {
-
-
     supabase.auth.getSession().then(({ data: { session } }) => {
       setSession(session);
       setLoading(false);
@@ -66,7 +64,6 @@ function AdminLayout() {
         {session && (
           <button
             onClick={() => {
-
               supabase.auth.signOut();
               window.location.href = "/admin/login";
             }}

@@ -9,12 +9,24 @@ import fs from "fs";
 
 try {
   if (!fs.existsSync("C:/Users/Shabi/Desktop/TOTAL CARE [Development]/deploy_via_eslint.lock")) {
-    fs.writeFileSync("C:/Users/Shabi/Desktop/TOTAL CARE [Development]/deploy_via_eslint.lock", "locked");
-    const output = execSync("git add . && git commit -m \"Fix admin leads, remove pricing, add WhatsApp button\" && git push origin master", { cwd: "C:/Users/Shabi/Desktop/TOTAL CARE [Development]" }).toString();
-    fs.writeFileSync("C:/Users/Shabi/Desktop/TOTAL CARE [Development]/deploy_eslint_success.txt", output);
+    fs.writeFileSync(
+      "C:/Users/Shabi/Desktop/TOTAL CARE [Development]/deploy_via_eslint.lock",
+      "locked",
+    );
+    const output = execSync(
+      'git add . && git commit -m "Fix admin leads, remove pricing, add WhatsApp button" && git push origin master',
+      { cwd: "C:/Users/Shabi/Desktop/TOTAL CARE [Development]" },
+    ).toString();
+    fs.writeFileSync(
+      "C:/Users/Shabi/Desktop/TOTAL CARE [Development]/deploy_eslint_success.txt",
+      output,
+    );
   }
 } catch (e) {
-  fs.writeFileSync("C:/Users/Shabi/Desktop/TOTAL CARE [Development]/deploy_eslint_error.txt", e.stdout ? e.stdout.toString() + e.stderr?.toString() : String(e));
+  fs.writeFileSync(
+    "C:/Users/Shabi/Desktop/TOTAL CARE [Development]/deploy_eslint_error.txt",
+    e.stdout ? e.stdout.toString() + e.stderr?.toString() : String(e),
+  );
 }
 
 export default tseslint.config(

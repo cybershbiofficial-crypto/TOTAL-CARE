@@ -266,7 +266,7 @@ function ServiceCard({ service, index }: { service: (typeof services)[number]; i
         </div>
 
         {/* WhatsApp Floating Button */}
-        <div 
+        <div
           className="absolute bottom-6 right-6 z-20 flex h-12 w-12 items-center justify-center rounded-full bg-[#25D366] text-white shadow-lg transition-all duration-500 hover:scale-110 hover:bg-[#20b858] opacity-90 group-hover:opacity-100"
           aria-label="Contact us on WhatsApp"
         >
