@@ -16,23 +16,6 @@ function AdminDashboard() {
   const fetchLeads = async () => {
     setLoading(true);
 
-    if (localStorage.getItem("mock_admin_session")) {
-      setLeads([
-        {
-          id: "demo-1",
-          name: "John Doe",
-          email: "john@example.com",
-          phone: "+971 50 123 4567",
-          service: "Waterproofing",
-          message: "Looking for a quote for villa waterproofing in Dubai Hills.",
-          status: "new",
-          created_at: new Date().toISOString(),
-        },
-      ]);
-      setLoading(false);
-      return;
-    }
-
     const { data, error } = await supabase
       .from("leads")
       .select("*")
