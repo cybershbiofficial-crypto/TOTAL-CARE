@@ -10,7 +10,6 @@ const links = [
   { label: "About", href: "#philosophy" },
   { label: "Contact", href: "#contact" },
 ];
-
 export function Nav() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
