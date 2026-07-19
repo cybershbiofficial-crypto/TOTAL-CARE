@@ -34,17 +34,13 @@ export function Nav() {
           <Link
             to="/"
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-            className="group flex items-center gap-3 z-50"
+            className="group flex items-center z-50"
           >
-            <span
-              aria-hidden
-              className="grid h-8 w-8 place-items-center bg-accent text-[12px] font-bold tracking-[0.15em] text-foreground transition-colors group-hover:bg-foreground group-hover:text-background"
-            >
-              TC
-            </span>
-            <span className="text-mono-xs font-bold text-foreground tracking-widest">
-              TOTAL CARE
-            </span>
+            <img
+              src="/images/logo.png"
+              alt="TOTAL CARE"
+              className="h-8 md:h-10 w-auto object-contain transition-opacity group-hover:opacity-80"
+            />
           </Link>
 
           <nav aria-label="Primary" className="hidden items-center gap-10 md:flex">
