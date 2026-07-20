@@ -103,6 +103,12 @@ export function Contact({ cmsContent }: { cmsContent?: any[] }) {
                 >
                   {contactData.phone}
                 </a>
+                <a
+                  href="tel:+971563937512"
+                  className="mt-1 block text-mute underline-offset-4 hover:text-accent hover:underline"
+                >
+                  +971 56 393 7512
+                </a>
               </div>
               <div>
                 <div className="text-mono-xs text-mute font-medium uppercase">Operating Hours</div>

@@ -131,7 +131,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           areaServed: "AE",
           address: { "@type": "PostalAddress", addressLocality: "Dubai", addressCountry: "AE" },
           url: "https://www.totalcare.ae",
-          telephone: "+971566502865",
+          telephone: ["+971563937512", "+971566502865"],
         }),
       },
     ],
