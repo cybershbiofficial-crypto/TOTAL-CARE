@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import { RevealText, RevealBlock } from "@/components/site/Reveal";
 import {
   Shield,
@@ -187,6 +188,25 @@ const services = [
 ];
 
 export function Services() {
+  const [activeCardId, setActiveCardId] = useState<string | null>(null);
+
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent | TouchEvent) => {
+      const target = e.target as HTMLElement;
+      if (!target.closest('.service-card')) {
+        setActiveCardId(null);
+      }
+    };
+    
+    document.addEventListener('mousedown', handleClickOutside);
+    document.addEventListener('touchstart', handleClickOutside, { passive: true });
+    
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener('touchstart', handleClickOutside);
+    };
+  }, []);
+
   return (
     <section id="services" className="relative bg-surface py-10 md:py-14 lg:py-18">
       <div className="mx-auto max-w-[1600px] px-6 md:px-10">
@@ -214,7 +234,14 @@ export function Services() {
 
         <div className="mt-24 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {services.map((s, idx) => (
-            <ServiceCard key={s.n} service={s} index={idx} />
+            <ServiceCard 
+              key={s.n} 
+              service={s} 
+              index={idx} 
+              isActive={activeCardId === s.id}
+              onActivate={() => setActiveCardId(s.id)}
+              onDeactivate={() => setActiveCardId((prev) => prev === s.id ? null : prev)}
+            />
           ))}
         </div>
       </div>
@@ -222,7 +249,19 @@ export function Services() {
   );
 }
 
-function ServiceCard({ service, index }: { service: (typeof services)[number]; index: number }) {
+function ServiceCard({ 
+  service, 
+  index, 
+  isActive, 
+  onActivate, 
+  onDeactivate 
+}: { 
+  service: (typeof services)[number]; 
+  index: number;
+  isActive: boolean;
+  onActivate: () => void;
+  onDeactivate: () => void;
+}) {
   const Icon = service.icon;
   const whatsappNumber = "971563937512";
   const whatsappMessage = encodeURIComponent(
@@ -232,7 +271,12 @@ function ServiceCard({ service, index }: { service: (typeof services)[number]; i
 
   return (
     <RevealBlock delay={index * 50} className="h-full">
-      <div className="group text-left relative flex h-full min-h-[420px] w-full flex-col justify-end overflow-hidden rounded-[2rem] bg-graphite transition-all duration-1000 hover:-translate-y-2 hover:shadow-[0_25px_50px_-12px_rgba(212,175,55,0.25)] will-change-transform border border-line/10 ease-[cubic-bezier(0.25,1,0.5,1)]">
+      <div 
+        className="service-card group text-left relative flex h-full min-h-[420px] w-full flex-col justify-end overflow-hidden rounded-[2rem] bg-graphite transition-all duration-1000 hover:-translate-y-2 hover:shadow-[0_25px_50px_-12px_rgba(212,175,55,0.25)] will-change-transform border border-line/10 ease-[cubic-bezier(0.25,1,0.5,1)]"
+        onMouseEnter={onActivate}
+        onMouseLeave={onDeactivate}
+        onClick={onActivate}
+      >
         {/* Background Image with Overlay */}
         <div className="absolute inset-0 z-0 overflow-hidden">
           <img
@@ -262,16 +306,19 @@ function ServiceCard({ service, index }: { service: (typeof services)[number]; i
 
         {/* WhatsApp Floating Button Wrapper */}
         <div 
-          className="absolute bottom-6 right-6 z-50 transition-all duration-[250ms] ease-out 
-            opacity-100 translate-y-0 scale-100 pointer-events-auto
-            lg:opacity-0 lg:translate-y-2 lg:scale-95 lg:pointer-events-none
-            lg:group-hover:opacity-100 lg:group-hover:translate-y-0 lg:group-hover:scale-100 lg:group-hover:pointer-events-auto"
+          className={`absolute bottom-6 right-6 z-50 transition-all ease-out pointer-events-auto
+            ${isActive 
+               ? 'opacity-100 scale-100 duration-[250ms]' 
+               : 'opacity-0 scale-95 duration-[200ms] pointer-events-none'}`}
         >
           <a
             href={whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
-            onClick={(e) => e.stopPropagation()}
+            onClick={(e) => {
+              e.stopPropagation();
+              onDeactivate();
+            }}
             className="flex h-[40px] w-[40px] items-center justify-center rounded-full bg-[#25D366] shadow-[0_4px_12px_rgba(37,211,102,0.3)] backdrop-blur-md transition-transform duration-[250ms] hover:scale-[1.08] active:scale-[0.95] focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#25D366] cursor-pointer"
             aria-label="Chat on WhatsApp"
           >
