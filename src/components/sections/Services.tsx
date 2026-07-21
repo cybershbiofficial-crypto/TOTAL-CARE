@@ -263,7 +263,7 @@ function ServiceCard({
   onDeactivate: () => void;
 }) {
   const Icon = service.icon;
-  const whatsappNumber = "971563937512";
+  const whatsappNumber = "971566502865";
   const whatsappMessage = encodeURIComponent(
     `Hi TOTAL CARE, I'm interested in your ${service.title} services. Could you provide more details?`,
   );

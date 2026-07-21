@@ -21,7 +21,7 @@ export function Footer() {
               <br />
               Dubai · United Arab Emirates
               <br /> <br />
-              +971 56 393 7512
+              +971 56 650 2865
             </address>
           </div>
 

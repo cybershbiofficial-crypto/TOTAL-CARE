@@ -116,8 +116,8 @@ export function Nav() {
             >
               totalcares.official@gmail.com
             </a>
-            <a href="tel:+971563937512" className="block text-mute hover:text-foreground">
-              +971 56 393 7512
+            <a href="tel:+971566502865" className="block text-mute hover:text-foreground">
+              +971 56 650 2865
             </a>
           </div>
         </div>

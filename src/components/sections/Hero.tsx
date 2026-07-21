@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { RevealText, RevealBlock } from "@/components/site/Reveal";
 import { Magnetic } from "@/components/site/Magnetic";
-import heroImg from "@/assets/hero.jpg";
+import heroImg from "@/assets/hero.jpeg";
 
 export function Hero({ cmsContent }: { cmsContent?: any[] }) {
   const heroData = cmsContent?.find((c) => c.id === "home_hero")?.content || {

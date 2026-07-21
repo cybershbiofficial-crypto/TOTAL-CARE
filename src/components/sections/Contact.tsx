@@ -10,7 +10,7 @@ export function Contact({ cmsContent }: { cmsContent?: any[] }) {
     address: "Shaik Zayed Road Satwa",
     city: "Dubai · United Arab Emirates",
     email: "totalcares.official@gmail.com",
-    phone: "+971 56 393 7512",
+    phone: "+971 56 650 2865",
     hours: "Mon — Sat · 08:00 → 18:00 GST",
   };
   const [sent, setSent] = useState(false);
