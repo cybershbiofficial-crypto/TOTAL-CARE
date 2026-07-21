@@ -21,9 +21,13 @@ export function Footer() {
               <br />
               Dubai · United Arab Emirates
               <br /> <br />
-              <a href="tel:+971563937512" className="hover:text-accent transition-colors">+971 56 393 7512</a>
+              <a href="tel:+971563937512" className="hover:text-accent transition-colors">
+                +971 56 393 7512
+              </a>
               <br />
-              <a href="tel:+971566502865" className="hover:text-accent transition-colors">+971 56 650 2865</a>
+              <a href="tel:+971566502865" className="hover:text-accent transition-colors">
+                +971 56 650 2865
+              </a>
             </address>
           </div>
 

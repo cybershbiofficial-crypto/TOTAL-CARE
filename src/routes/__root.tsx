@@ -11,7 +11,7 @@ import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 // Error reporting removed as per client request
-import { FloatingWhatsApp } from "../components/site/FloatingWhatsApp";
+import { TawkChat } from "../components/site/TawkChat";
 
 function NotFoundComponent() {
   return (
@@ -164,7 +164,7 @@ function RootComponent() {
   return (
     <QueryClientProvider client={queryClient}>
       <Outlet />
-      <FloatingWhatsApp />
+      <TawkChat />
       <Toaster position="bottom-right" theme="dark" />
     </QueryClientProvider>
   );

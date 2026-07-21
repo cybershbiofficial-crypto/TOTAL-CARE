@@ -54,7 +54,7 @@
   --radius: 0.25rem;
 
   /* Primary: Near Black */
-  --background: oklch(0.15 0.01 250);
+  --background: #0b1013;
   --foreground: oklch(0.98 0.01 90); /* Warm White text on dark bg */
 
   /* Soft Beige / Stone Gray sections */
